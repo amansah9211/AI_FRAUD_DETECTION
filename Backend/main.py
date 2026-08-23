@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
 
-random_forest_model = joblib.load('random_forest_model1.pkl')
-robust_scaler = joblib.load('robust_scaler1.pkl')
+random_forest_model = joblib.load('Backend/random_forest_model1.pkl')
+robust_scaler = joblib.load('Backend/robust_scaler1.pkl')
 
 print("\n========== SCALER INFO ==========")
 print("Scaler type:", type(robust_scaler))
