@@ -6,9 +6,6 @@ __pycache__/
 
 dataset/*.csv
 dataset/**/*.csv
- 
-*.pkl
-
 
 venv/
 .venv/
