@@ -131,7 +131,7 @@ console.log("Sending to backend:", data);
 
     try {
 
-        const response = await fetch("https://ai-fraud-detection-6lal.onrender.com/predict", {
+        const response = await fetch("https://ai-fraud-detection-3cgn.onrender.com/predict", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
