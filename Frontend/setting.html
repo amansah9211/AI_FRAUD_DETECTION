@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings</title>
+    <link rel="stylesheet" href="setting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="screen">
+            <nav class="sidebar border-r border-[#464554]/40 shadow-sm hidden md:flex">
+                <div class="brand mb-8 px-2 group">
+                    <a href="home.html"
+                        class="logo rounded-full bg-[#c0c1ff]/20 border border-[#c0c1ff]/30 group-hover:bg-[#c0c1ff]/30 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-[#c0c1ff] text-[22px] bg-[#131b2e]"></i></a>
+                    <a href="home.html">
+                        <h1 class="font-bold text-lg text-[#c0c1ff] leading-tight tracking-tight bg-[#131b2e]">
+                            FraudGuard AI</h1>
+                        <p class="text-xs text-[#c7c4d7] bg-[#131b2e]">Vigilant Monitoring</p>
+                    </a>
+
+                </div>
+                <div class="menu flex-1 space-y-1.5 bg-[#131b2e] ">
+                    <a href="dashboard.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-table-cells-large bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Dashboard</span>
+                    </a>
+                    <a href="transaction.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd] ">
+                        <i class="fa-solid fa-money-check-dollar bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Transactions</span>
+                    </a>
+                    <a href="Analysis.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-chart-line bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Analyze</span>
+                    </a>
+                    <a href="model_info.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-microchip bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Model Info</span>
+                    </a>
+                    <a href="setting.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-gear bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Settings</span>
+                    </a>
+                </div>
+                <div class="mb-4 pt-3 border-t border-[#464554]/30 bg-[#131b2e]">
+                    <a href="home.html"
+                        class="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium font-bold [#c7c4d7] hover:text-[#c0c1ff] hover:bg-[#2d3449]/30 rounded transition-colors">
+                        <i class="fa-solid fa-house bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">View Landing Page</span></a>
+                </div>
+                <div class="mt-auto">
+                    <a href="setting.html"
+                        class="w-full py-2.5 px-3 rounded-lg bg-[#494bd6] hover:bg-[#8083ff] text-white font-semibold text-xs transition-all ai-glow flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-500/20 active:scale-98">
+                        <i class="fa-solid fa-rocket bg-[#494bd6] text-[20px]"></i>
+                        </span>Upgrade Security</a>
+                </div>
+            </nav>
+
+            <div class="flex-1 flex flex-col md:ml-60 w-full relative min-h-screen">
+                <header
+                    class="header md:w-[calc(100%-240px)] bg-[#0b1326]/80 backdrop-blur-xl border-b border-[#464554]/40 shadow-md md:px-8 transition-all">
+                    <div class="hidden md:flex flex-1 items-center gap-3 max-w-md">
+                        <div class="relative w-full group">
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#c7c4d7] group-focus-within:text-[#c0c1ff] transition-colors text-[20px] "></i>
+                            <input placeholder="Search transactions, entities, IPs..."
+                                class="w-full bg-[#020617] border border-[#464554] rounded-full pl-10 pr-4 py-1.5 text-sm outline-none transition-all text-[#dae2fd]"
+                                type="text" value="">
+                        </div>
+                    </div>
+                    <div class="online">
+                        <span
+                            class="hidden sm:flex items-center gap-2 text-[#4edea3] font-semibold font-label-mono text-xs tracking-wider uppercase bg-[#003824]/30 px-2.5 py-1 rounded-full border border-[#00885d]/40">
+                            <span class="status-dot">
+                            </span>API Online
+                        </span>
+                        <div class="system-icon">
+                            <div class="relative">
+                                <button
+                                    class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50 relative"
+                                    title="Threat Notifications">
+                                    <i class="fa-regular fa-bell text-[20px]"></i>
+                                    <span class="notification-dot">
+                                    </span>
+                                </button>
+                            </div>
+                            <button
+                                class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50"
+                                title="Sensor System Info">
+                                <i class="fa-solid fa-tower-broadcast text-[22px]"></i>
+                            </button>
+                        </div>
+                        <div class="h-5 w-px bg-[#464554]/50 hidden sm:block"></div>
+                        <div class="relative">
+                            <button
+                                class="w-8 h-8 rounded-full bg-[#2d3449] border border-[#464554] overflow-hidden hover:ring-2 hover:ring-[#c0c1ff] transition-all cursor-pointer block"
+                                title="Analyst Profile">
+                                <img alt="User Analyst Profile" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCN_D3xaYRfMzC8ElFodCWB0ioTSiV04hjZmFvsEewRN4cZRSQqvVEN3z_NyWGVSm5SLkcxUNAJzGQn7j81wA873HHDe8sfHJ20BXs2V6FKq8ks9ZYsD1EXUrOIRSxQGAJhe7L85YwzUOC82q6Z2ZpD1zoH-DQt6rCmZ-2ZfhPxxzA-oOmjEnC2WRgrQh7OVMlSb5Yc2HaWpFxo6lllSBmBLMxaeOMiYf13KbvEQ3KRiFCVht5AMQDWQ">
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="flex-1 p-4 md:p-8 mt-16 overflow-y-auto max-w-7xl mx-auto w-full">
+                    <div class="space-y-6 max-w-4xl">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#dae2fd] tracking-tight">Security Engine Settings</h2>
+                            <p class="text-sm text-[#c7c4d7] mt-1">Configure risk classification thresholds, automated
+                                mitigation webhooks, and alert routing.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl border border-[#464554] space-y-6">
+                            <h3
+                                class="text-base font-bold text-[#dae2fd] pb-2 border-b border-[#464554] flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-[#c0c1ff]"></i>Risk Threshold Cutoffs
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                            class="text-[#ffb4ab] font-bold">CRITICAL FRAUD THRESHOLD
+                                            (AUTO-BLOCK)</span>
+                                        <span id="criticalValue" class="text-[#ffb4ab] font-bold text-sm">75% Risk
+                                            Score</span>
+                                    </div>
+                                    <input type="range" id="criticalSlider" min="0" max="100" value="75"
+                                        class="w-full accent-[#ffb4ab] bg-[#0b1326] h-2 rounded cursor-pointer"
+                                        type="range" value="0.75">
+                                    <p class="text-[11px] text-[#c7c4d7]">Transactions scoring above 75% will be
+                                        immediately declined at gateway level and flagged in SOC feed.</p>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                            class="text-[#f59e0b] font-bold">MANUAL REVIEW THRESHOLD</span>
+                                        <span id="manualValue" class="text-[#f59e0b] font-bold text-sm">35% Risk
+                                            Score</span>
+                                    </div>
+                                    <input type="range" id="manualSlider" min="0" max="50" value="35"
+                                        class="w-full accent-[#f59e0b] bg-[#0b1326] h-2 rounded cursor-pointer"
+                                        type="range" value="0.35">
+                                    <p class="text-[11px] text-[#c7c4d7]">Transactions scoring between 35% and 75% will
+                                        be held for human analyst review.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl border border-[#464554] space-y-4">
+                            <h3
+                                class="text-base font-bold text-[#dae2fd] pb-2 border-b border-[#464554] flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-[#c0c1ff]"></i>Automated Response
+                                &amp; Webhooks
+                            </h3>
+                            <div class="space-y-3"><label
+                                    class="flex items-center justify-between p-3 rounded-lg bg-[#0b1326] border border-[#464554] cursor-pointer hover:bg-[#131b2e] transition-colors">
+                                    <div>
+                                        <div class="text-xs font-bold text-[#dae2fd]">Automated Card Freeze API</div>
+                                        <div class="text-[11px] text-[#c7c4d7]">Instantly issue temporary lock via
+                                            issuing processor on Critical Fraud</div>
+                                    </div><input class="w-4 h-4 accent-[#8083ff] rounded cursor-pointer" type="checkbox"
+                                        checked="">
+                                </label><label
+                                    class="flex items-center justify-between p-3 rounded-lg bg-[#0b1326] border border-[#464554] cursor-pointer hover:bg-[#131b2e] transition-colors">
+                                    <div>
+                                        <div class="text-xs font-bold text-[#dae2fd]">Slack SOC Security Alerts</div>
+                                        <div class="text-[11px] text-[#c7c4d7]">Send instant webhook payload to
+                                            #security-alerts channel</div>
+                                    </div><input class="w-4 h-4 accent-[#8083ff] rounded cursor-pointer" type="checkbox"
+                                        checked="">
+                                </label><label
+                                    class="flex items-center justify-between p-3 rounded-lg bg-[#0b1326] border border-[#464554] cursor-pointer hover:bg-[#131b2e] transition-colors">
+                                    <div>
+                                        <div class="text-xs font-bold text-[#dae2fd]">Email Threat Digest</div>
+                                        <div class="text-[11px] text-[#c7c4d7]">Send hourly summary of high-risk
+                                            transactions to security leads</div>
+                                    </div><input class="w-4 h-4 accent-[#8083ff] rounded cursor-pointer" type="checkbox"
+                                        checked="">
+                                </label></div>
+                        </div>
+                        <div class="flex justify-end items-center gap-4"><button type="button"
+                                class="px-6 py-2.5 bg-[#8083ff] hover:bg-[#c0c1ff] text-[#0d0096] font-bold text-xs rounded-lg transition-all shadow-md active:scale-95 cursor-pointer">Save
+                                Configuration</button></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="AI_Fraud.js"></script>
+</body>
+
+</html>

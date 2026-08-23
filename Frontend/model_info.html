@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>model_info</title>
+    <link rel="stylesheet" href="model_info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="screen">
+            <nav class="sidebar border-r border-[#464554]/40 shadow-sm hidden md:flex">
+                <div class="brand mb-8 px-2 group">
+                    <a href="home.html" class="logo rounded-full bg-[#c0c1ff]/20 border border-[#c0c1ff]/30 group-hover:bg-[#c0c1ff]/30 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-[#c0c1ff] text-[22px] bg-[#131b2e]"></i></a>
+                    <a href="home.html"><h1 class="font-bold text-lg text-[#c0c1ff] leading-tight tracking-tight bg-[#131b2e]">
+                            FraudGuard AI</h1>
+                        <p class="text-xs text-[#c7c4d7] bg-[#131b2e]">Vigilant Monitoring</p></a>
+
+                </div>
+                <div class="menu flex-1 space-y-1.5 bg-[#131b2e] ">
+                    <a href="dashboard.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-table-cells-large bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Dashboard</span>
+                    </a>
+                    <a href="transaction.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd] ">
+                        <i class="fa-solid fa-money-check-dollar bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Transactions</span>
+                    </a>
+                    <a href="Analysis.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-chart-line bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Analyze</span>
+                    </a>
+                    <a href="model_info.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-microchip bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Model Info</span>
+                    </a>
+                    <a href="setting.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-gear bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Settings</span>
+                    </a>
+                </div>
+                <div class="mb-4 pt-3 border-t border-[#464554]/30 bg-[#131b2e]">
+                    <a href="home.html"
+                        class="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium font-bold [#c7c4d7] hover:text-[#c0c1ff] hover:bg-[#2d3449]/30 rounded transition-colors">
+                        <i class="fa-solid fa-house bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">View Landing Page</span></a>
+                </div>
+                <div class="mt-auto">
+                    <a href="setting.html"
+                        class="w-full py-2.5 px-3 rounded-lg bg-[#494bd6] hover:bg-[#8083ff] text-white font-semibold text-xs transition-all ai-glow flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-500/20 active:scale-98">
+                        <i class="fa-solid fa-rocket bg-[#494bd6] text-[20px]"></i>
+                        </span>Upgrade Security</a>
+                </div>
+            </nav>
+
+            <div class="flex-1 flex flex-col md:ml-60 w-full relative min-h-screen">
+                <header
+                    class="header md:w-[calc(100%-240px)] bg-[#0b1326]/80 backdrop-blur-xl border-b border-[#464554]/40 shadow-md md:px-8 transition-all">
+                    <div class="hidden md:flex flex-1 items-center gap-3 max-w-md">
+                        <div class="relative w-full group">
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#c7c4d7] group-focus-within:text-[#c0c1ff] transition-colors text-[20px] "></i>
+                            <input placeholder="Search transactions, entities, IPs..."
+                                class="w-full bg-[#020617] border border-[#464554] rounded-full pl-10 pr-4 py-1.5 text-sm outline-none transition-all text-[#dae2fd]"
+                                type="text" value="">
+                        </div>
+                    </div>
+                    <div class="online">
+                        <span
+                            class="hidden sm:flex items-center gap-2 text-[#4edea3] font-semibold font-label-mono text-xs tracking-wider uppercase bg-[#003824]/30 px-2.5 py-1 rounded-full border border-[#00885d]/40">
+                            <span class="status-dot">
+                            </span>API Online
+                        </span>
+                        <div class="system-icon">
+                            <div class="relative">
+                                <button
+                                    class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50 relative"
+                                    title="Threat Notifications">
+                                    <i class="fa-regular fa-bell text-[20px]"></i>
+                                    <span class="notification-dot">
+                                    </span>
+                                </button>
+                            </div>
+                            <button
+                                class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50"
+                                title="Sensor System Info">
+                                <i class="fa-solid fa-tower-broadcast text-[22px]"></i>
+                            </button>
+                        </div>
+                        <div class="h-5 w-px bg-[#464554]/50 hidden sm:block"></div>
+                        <div class="relative">
+                            <button
+                                class="w-8 h-8 rounded-full bg-[#2d3449] border border-[#464554] overflow-hidden hover:ring-2 hover:ring-[#c0c1ff] transition-all cursor-pointer block"
+                                title="Analyst Profile">
+                                <img alt="User Analyst Profile" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCN_D3xaYRfMzC8ElFodCWB0ioTSiV04hjZmFvsEewRN4cZRSQqvVEN3z_NyWGVSm5SLkcxUNAJzGQn7j81wA873HHDe8sfHJ20BXs2V6FKq8ks9ZYsD1EXUrOIRSxQGAJhe7L85YwzUOC82q6Z2ZpD1zoH-DQt6rCmZ-2ZfhPxxzA-oOmjEnC2WRgrQh7OVMlSb5Yc2HaWpFxo6lllSBmBLMxaeOMiYf13KbvEQ3KRiFCVht5AMQDWQ">
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex-1 p-4 md:p-8 mt-16 overflow-y-auto max-w-7xl mx-auto w-full">
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#dae2fd] tracking-tight">Machine Learning Model Specs
+                            </h2>
+                            <p class="text-sm text-[#c7c4d7] mt-1">Detailed metrics, hyperparameter architecture, and
+                                feature contribution weights of the FraudGuard AI Random Forest ensemble.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="glass-panel rounded-xl p-4 border border-[#464554]">
+                                <div class="text-xs font-label-mono text-[#c7c4d7] uppercase">Ensemble Architecture
+                                </div>
+                                <div class="text-xl font-bold text-[#c0c1ff] mt-1 font-label-mono">Random Forest</div>
+                                <div class="text-xs text-[#c7c4d7] mt-1">500 Decision Trees (Bagging)</div>
+                            </div>
+                            <div class="glass-panel rounded-xl p-4 border border-[#464554]">
+                                <div class="text-xs font-label-mono text-[#c7c4d7] uppercase">AUC - ROC Score</div>
+                                <div class="text-xl font-bold text-[#4edea3] mt-1 font-label-mono">0.9984</div>
+                                <div class="text-xs text-[#c7c4d7] mt-1">Near-perfect separation</div>
+                            </div>
+                            <div class="glass-panel rounded-xl p-4 border border-[#464554]">
+                                <div class="text-xs font-label-mono text-[#c7c4d7] uppercase">Inference Latency</div>
+                                <div class="text-xl font-bold text-[#c0c1ff] mt-1 font-label-mono">&lt; 0.85 ms</div>
+                                <div class="text-xs text-[#c7c4d7] mt-1">Sub-millisecond execution</div>
+                            </div>
+                            <div class="glass-panel rounded-xl p-4 border border-[#464554]">
+                                <div class="text-xs font-label-mono text-[#c7c4d7] uppercase">Scaler Pipeline</div>
+                                <div class="text-xl font-bold text-[#adc6ff] mt-1 font-label-mono">RobustScaler</div>
+                                <div class="text-xs text-[#c7c4d7] mt-1">IQR outlier neutralization</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="lg:col-span-2 glass-panel rounded-xl p-6 border border-[#464554] space-y-4">
+                                <div class="flex justify-between items-center pb-2 border-b border-[#464554]">
+                                    <h3 class="text-base font-bold text-[#dae2fd]">Gini Feature Importance Rankings</h3>
+                                    <span class="font-label-mono text-xs text-[#c0c1ff]">Top 8 Vectors</span>
+                                </div>
+                                <div class="space-y-3 pt-2">
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V14</span><span
+                                                class="text-[#c0c1ff]">22.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 88%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Primary transaction behavioral distance
+                                            vector</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V12</span><span
+                                                class="text-[#c0c1ff]">18.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 72%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Merchant anomaly divergence factor</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V10</span><span
+                                                class="text-[#c0c1ff]">14.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 56%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Cardholder velocity pattern component</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">Amount</span><span
+                                                class="text-[#c0c1ff]">12.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 48%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Scaled transaction volume (USD)</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V17</span><span
+                                                class="text-[#c0c1ff]">9.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 36%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Cross-border geolocation distance score
+                                        </p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V4</span><span
+                                                class="text-[#c0c1ff]">8.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 32%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Terminal authentication mode variance</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V11</span><span
+                                                class="text-[#c0c1ff]">6.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 24%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">Time-window request density</p>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-xs font-label-mono"><span
+                                                class="text-[#dae2fd] font-bold">V16</span><span
+                                                class="text-[#c0c1ff]">5.0% weight</span></div>
+                                        <div
+                                            class="w-full bg-[#0b1326] h-2 rounded-full overflow-hidden border border-[#464554]">
+                                            <div class="bg-[#8083ff] h-full rounded-full" style="width: 20%;"></div>
+                                        </div>
+                                        <p class="text-[10px] text-[#c7c4d7]">POS entry mode entropy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="glass-panel rounded-xl p-6 border border-[#464554] flex flex-col justify-between space-y-6">
+                                <div class="pb-2 border-b border-[#464554]">
+                                    <h3 class="text-base font-bold text-[#dae2fd]">Confusion Matrix</h3>
+                                    <p class="text-xs text-[#c7c4d7] mt-0.5">Test set evaluations on 284,807
+                                        transactions</p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 text-center font-label-mono text-xs">
+                                    <div class="p-3 bg-[#00885d]/20 border border-[#4edea3]/40 rounded-lg">
+                                        <div class="text-[#4edea3] font-bold text-lg bg-[#00885d]/5">56,654</div>
+                                        <div class="text-[10px] text-[#c7c4d7] uppercase mt-1 bg-[#00885d]/5">True Negative (Safe)
+                                        </div>
+                                    </div>
+                                    <div class="p-3 bg-[#93000a]/20 border border-[#ffb4ab]/40 rounded-lg">
+                                        <div class="text-[#ffb4ab] font-bold text-lg bg-[#93000a]/5">2</div>
+                                        <div class="text-[10px] text-[#c7c4d7] uppercase mt-1 bg-[#93000a]/5">True Positive (Fraud)
+                                        </div>
+                                    </div>
+                                    <div class="p-3 bg-[#2d3449] border border-[#464554] rounded-lg">
+                                        <div class="text-[#dae2fd] font-bold text-lg  bg-[#2d3449]">23</div>
+                                        <div class="text-[10px] text-[#c7c4d7] uppercase mt-1 bg-[#2d3449]">False Positive</div>
+                                    </div>
+                                    <div class="p-3 bg-[#2d3449] border border-[#464554] rounded-lg">
+                                        <div class="text-[#dae2fd] font-bold text-lg bg-[#2d3449]">67</div>
+                                        <div class="text-[10px] text-[#c7c4d7] uppercase mt-1 bg-[#2d3449]">False Negative</div>
+                                    </div>
+                                </div>
+                                <div class="bg-[#0b1326] p-3 rounded-lg border border-[#464554] space-y-1.5 text-xs">
+                                    <div class="flex justify-between"><span class="text-[#c7c4d7]">Precision
+                                            Score:</span> <span
+                                            class="font-label-mono text-[#4edea3] font-bold">97.1014%</span></div>
+                                    <div class="flex justify-between"><span class="text-[#c7c4d7]">Recall (TPR):</span>
+                                        <span class="font-label-mono text-[#4edea3] font-bold">74.4%</span></div>
+                                    <div class="flex justify-between"><span class="text-[#c7c4d7]">F1-Score:</span>
+                                        <span class="font-label-mono text-[#c0c1ff] font-bold">84.27%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-6 rounded-xl border border-[#464554] space-y-3">
+                            <h3 class="text-base font-bold text-[#dae2fd] flex items-center gap-2">
+                                <i class="fa-solid fa-hourglass-half text-[#c0c1ff]"></i>RobustScaler
+                                Mathematical Transformation</h3>
+                            <p class="text-xs text-[#c7c4d7] leading-relaxed">StandardScaler uses mean and variance
+                                which are heavily distorted by high-value fraud transaction outliers. FraudGuard AI uses
+                                RobustScaler:</p>
+                            <div
+                                class="bg-[#020617] p-4 rounded-lg font-label-mono text-xs text-[#c0c1ff] text-center border border-[#1E293B]">
+                                x_scaled = (x - Q2(x)) / (Q3(x) - Q1(x))</div>
+                            <p class="text-[11px] text-[#c7c4d7]">Where Q2(x) is the median feature value, and IQR =
+                                Q3(x) - Q1(x) is the interquartile range across non-fraud historical baselines.</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="AI_Fraud.js"></script>
+</body>
+
+</html>

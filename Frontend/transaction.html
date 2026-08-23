@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transaction</title>
+    <link rel="stylesheet" href="model_info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="screen">
+            <nav class="sidebar border-r border-[#464554]/40 shadow-sm hidden md:flex">
+                <div class="brand mb-8 px-2 group">
+                    <a href="home.html" class="logo rounded-full bg-[#c0c1ff]/20 border border-[#c0c1ff]/30 group-hover:bg-[#c0c1ff]/30 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-[#c0c1ff] text-[22px] bg-[#131b2e]"></i></a>
+                    <a href="home.html"><h1 class="font-bold text-lg text-[#c0c1ff] leading-tight tracking-tight bg-[#131b2e]">
+                            FraudGuard AI</h1>
+                        <p class="text-xs text-[#c7c4d7] bg-[#131b2e]">Vigilant Monitoring</p></a>
+
+                </div>
+                <div class="menu flex-1 space-y-1.5 bg-[#131b2e] ">
+                    <a href="dashboard.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-table-cells-large bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Dashboard</span>
+                    </a>
+                    <a href="transaction.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd] ">
+                        <i class="fa-solid fa-money-check-dollar bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Transactions</span>
+                    </a>
+                    <a href="Analysis.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-chart-line bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e] ">Analyze</span>
+                    </a>
+                    <a href="model_info.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-microchip bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Model Info</span>
+                    </a>
+                    <a href="setting.html"
+                        class="menu-item rounded-lg text-sm font-medium transition-all text-[#c7c4d7] hover:bg-[#2d3449]/50 hover:text-[#dae2fd]">
+                        <i class="fa-solid fa-gear bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">Settings</span>
+                    </a>
+                </div>
+                <div class="mb-4 pt-3 border-t border-[#464554]/30 bg-[#131b2e]">
+                    <a href="home.html"
+                        class="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium font-bold [#c7c4d7] hover:text-[#c0c1ff] hover:bg-[#2d3449]/30 rounded transition-colors">
+                        <i class="fa-solid fa-house bg-[#131b2e] text-[20px]"></i>
+                        <span class="bg-[#131b2e]">View Landing Page</span></a>
+                </div>
+                <div class="mt-auto">
+                    <a href="setting.html"
+                        class="w-full py-2.5 px-3 rounded-lg bg-[#494bd6] hover:bg-[#8083ff] text-white font-semibold text-xs transition-all ai-glow flex items-center justify-center gap-2 shadow-lg hover:shadow-indigo-500/20 active:scale-98">
+                        <i class="fa-solid fa-rocket bg-[#494bd6] text-[20px]"></i>
+                        </span>Upgrade Security</a>
+                </div>
+            </nav>
+
+            <div class="flex-1 flex flex-col md:ml-60 w-full relative min-h-screen">
+                <header
+                    class="header md:w-[calc(100%-240px)] bg-[#0b1326]/80 backdrop-blur-xl border-b border-[#464554]/40 shadow-md md:px-8 transition-all">
+                    <div class="hidden md:flex flex-1 items-center gap-3 max-w-md">
+                        <div class="relative w-full group">
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#c7c4d7] group-focus-within:text-[#c0c1ff] transition-colors text-[20px] "></i>
+                            <input placeholder="Search transactions, entities, IPs..."
+                                class="w-full bg-[#020617] border border-[#464554] rounded-full pl-10 pr-4 py-1.5 text-sm outline-none transition-all text-[#dae2fd]"
+                                type="text" value="">
+                        </div>
+                    </div>
+                    <div class="online">
+                        <span
+                            class="hidden sm:flex items-center gap-2 text-[#4edea3] font-semibold font-label-mono text-xs tracking-wider uppercase bg-[#003824]/30 px-2.5 py-1 rounded-full border border-[#00885d]/40">
+                            <span class="status-dot">
+                            </span>API Online
+                        </span>
+                        <div class="system-icon">
+                            <div class="relative">
+                                <button
+                                    class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50 relative"
+                                    title="Threat Notifications">
+                                    <i class="fa-regular fa-bell text-[20px]"></i>
+                                    <span class="notification-dot">
+                                    </span>
+                                </button>
+                            </div>
+                            <button
+                                class="text-[#c7c4d7] hover:text-[#c0c1ff] transition-opacity p-1.5 rounded-lg hover:bg-[#2d3449]/50"
+                                title="Sensor System Info">
+                                <i class="fa-solid fa-tower-broadcast text-[22px]"></i>
+                            </button>
+                        </div>
+                        <div class="h-5 w-px bg-[#464554]/50 hidden sm:block"></div>
+                        <div class="relative">
+                            <button
+                                class="w-8 h-8 rounded-full bg-[#2d3449] border border-[#464554] overflow-hidden hover:ring-2 hover:ring-[#c0c1ff] transition-all cursor-pointer block"
+                                title="Analyst Profile">
+                                <img alt="User Analyst Profile" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCN_D3xaYRfMzC8ElFodCWB0ioTSiV04hjZmFvsEewRN4cZRSQqvVEN3z_NyWGVSm5SLkcxUNAJzGQn7j81wA873HHDe8sfHJ20BXs2V6FKq8ks9ZYsD1EXUrOIRSxQGAJhe7L85YwzUOC82q6Z2ZpD1zoH-DQt6rCmZ-2ZfhPxxzA-oOmjEnC2WRgrQh7OVMlSb5Yc2HaWpFxo6lllSBmBLMxaeOMiYf13KbvEQ3KRiFCVht5AMQDWQ">
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="flex-1 p-4 md:p-8 mt-16 overflow-y-auto max-w-7xl mx-auto w-full">
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <h2 class="text-2xl font-bold text-[#dae2fd] tracking-tight">Transaction Log &amp; Audit
+                                </h2>
+                                <p class="text-sm text-[#c7c4d7] mt-1">Real-time ledger of processed financial packets
+                                    and feature vectors.</p>
+                            </div>
+                            <div class="flex items-center gap-2"><button
+                                    class="flex items-center gap-1.5 px-3 py-2 rounded bg-[#2d3449] border border-[#464554] text-[#dae2fd] hover:bg-[#31394d] text-xs font-semibold transition-colors">
+                                        <i class="fa-solid fa-download text-[16px]"></i>Export Audit
+                                    CSV</button></div>
+                        </div>
+                        <div
+                            class="glass-panel p-4 rounded-xl border border-[#464554] flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4">
+                            <div class="relative flex-1 max-w-md">
+                                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#c7c4d7] text-[18px]"></i><input
+                                    placeholder="Filter by ID, IP, location, or amount..."
+                                    class="w-full bg-[#020617] border border-[#464554] rounded-lg pl-9 pr-3 py-1.5 text-xs text-[#dae2fd] placeholder-[#c7c4d7]/50 focus:border-[#c0c1ff] outline-none"
+                                    type="text" value=""></div>
+                            <div class="flex items-center gap-1.5 flex-wrap"><button
+                                    class="px-3 py-1 rounded-full text-xs font-medium font-label-mono transition-all bg-[#171f33] text-[#c7c4d7] ">ALL
+                                    (6)</button><button
+                                    class="px-3 py-1 rounded-full text-xs font-medium font-label-mono transition-all bg-[#171f33] text-[#c7c4d7] ">FRAUD
+                                    (2)</button><button
+                                    class="px-3 py-1 rounded-full text-xs font-medium font-label-mono transition-all bg-[#171f33] text-[#c7c4d7] ">REVIEW
+                                    (1)</button><button
+                                    class="px-3 py-1 rounded-full text-xs font-medium font-label-mono transition-all bg-[#171f33] text-[#c7c4d7] ">NORMAL
+                                    (3)</button></div>
+                            <div class="flex items-center gap-2"><span
+                                    class="text-xs text-[#c7c4d7] font-label-mono">Sort:</span><select
+                                    class="bg-[#020617] border border-[#464554] rounded px-2.5 py-1 text-xs text-[#dae2fd] outline-none">
+                                    <option value="timestamp">Recent First</option>
+                                    <option value="riskScore font-bold">Highest Risk First</option>
+                                    <option value="amount">Highest Amount First</option>
+                                </select></div>
+                        </div>
+                        <div class="bg-[#171f33] rounded-xl border border-[#464554] overflow-hidden">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr
+                                            class="border-b border-[#464554] font-label-mono text-[11px] text-[#c7c4d7] bg-[#222a3d]/30">
+                                            <th class="py-3.5 px-4 font-medium">TRANSACTION ID</th>
+                                            <th class="py-3.5 px-4 font-medium">IP / LOCATION</th>
+                                            <th class="py-3.5 px-4 font-medium text-right">AMOUNT</th>
+                                            <th class="py-3.5 px-4 font-medium">VERDICT</th>
+                                            <th class="py-3.5 px-4 font-medium">RISK SCORE</th>
+                                            <th class="py-3.5 px-4 font-medium">TIME</th>
+                                            <th class="py-3.5 px-4 font-medium text-right">ACTIONS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-xs">
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8924-X<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">INT</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">192.168.12.44</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">Zurich,
+                                                    CH (Proxy/VPN detected)</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $4,250.00</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#ffb4ab] border border-[#ffb4ab] px-2.5 py-1 rounded text-[11px] bg-[#93000a]/20 font-bold inline-flex items-center gap-1"><span
+                                                        class="w-1.5 h-1.5 rounded-full bg-[#ffb4ab] animate-pulse"></span>FRAUD</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#ffb4ab]" style="width: 98%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">98%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">2 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8925-Y<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">DOM</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">10.0.4.18</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">Chicago,
+                                                    IL, USA</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $124.50</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#4edea3] border border-[#4edea3] px-2.5 py-1 rounded text-[11px] bg-[#00885d]/10 font-bold inline-flex items-center gap-1">NORMAL</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#4edea3]" style="width: 5%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">2%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">5 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8926-Z<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">INT</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">172.16.8.91</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">London,
+                                                    UK</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $850.00</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#f59e0b] border border-[#f59e0b] px-2.5 py-1 rounded text-[11px] bg-[#f59e0b]/10 font-bold inline-flex items-center gap-1">REVIEW</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#f59e0b]" style="width: 65%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">65%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">12 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8927-A<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">DOM</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">192.168.1.105</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">Austin,
+                                                    TX, USA</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $15.99</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#4edea3] border border-[#4edea3] px-2.5 py-1 rounded text-[11px] bg-[#00885d]/10 font-bold inline-flex items-center gap-1">NORMAL</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#4edea3]" style="width: 5%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">1%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">18 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8928-B<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">INT</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">185.220.101.5</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">
+                                                    Bucharest, RO (Tor Exit Node)</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $9,850.00</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#ffb4ab] border border-[#ffb4ab] px-2.5 py-1 rounded text-[11px] bg-[#93000a]/20 font-bold inline-flex items-center gap-1"><span
+                                                        class="w-1.5 h-1.5 rounded-full bg-[#ffb4ab] animate-pulse"></span>FRAUD</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#ffb4ab]" style="width: 99%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">99%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">25 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-[#464554]/30 hover:bg-[#2d3449]/40 transition-colors cursor-pointer">
+                                            <td class="py-3.5 px-4 font-label-mono font-bold text-[#dae2fd]">
+                                                TXN-8929-C<span
+                                                    class="ml-2 text-[10px] text-[#c7c4d7] bg-[#2d3449] px-1.5 py-0.5 rounded">DOM</span>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-[11px]">
+                                                <div class="text-[#dae2fd]">10.0.12.88</div>
+                                                <div class="text-[10px] text-[#c7c4d7] truncate max-w-[180px]">Seattle,
+                                                    WA, USA</div>
+                                            </td>
+                                            <td class="py-3.5 px-4 font-label-mono text-right font-bold text-[#dae2fd]">
+                                                $342.00</td>
+                                            <td class="py-3.5 px-4"><span
+                                                    class="text-[#4edea3] border border-[#4edea3] px-2.5 py-1 rounded text-[11px] bg-[#00885d]/10 font-bold inline-flex items-center gap-1">NORMAL</span>
+                                            </td>
+                                            <td class="py-3.5 px-4">
+                                                <div class="flex items-center gap-2 max-w-[140px]">
+                                                    <div class="w-full bg-[#0b1326] h-1.5 rounded overflow-hidden">
+                                                        <div class="h-full bg-[#4edea3]" style="width: 5%;"></div>
+                                                    </div><span
+                                                        class="font-label-mono text-[11px] text-[#c7c4d7] font-semibold">3%</span>
+                                                </div>
+                                            </td>
+                                            <td class="py-3.5 px-4 text-[#c7c4d7] font-label-mono text-[11px]">32 mins
+                                                ago</td>
+                                            <td class="py-3.5 px-4 text-right"><a href="Analysis.html"
+                                                    class="px-2.5 py-1 rounded bg-[#2d3449] hover:bg-[#31394d] text-[#c0c1ff] font-label-mono text-xs font-medium">Analyze</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="AI_Fraud.js"></script>
+</body>
+
+</html>
